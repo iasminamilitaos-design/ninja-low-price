@@ -79,3 +79,110 @@ Analisar os resultados
 Indicar qual loja possui o melhor preço total
 
 Esse é o comportamento padrão que o agente deve seguir em todas as consultas realizadas.
+
+---
+
+## 🔧 Ações (Tools) Configuradas
+
+### Tool: `apibusca` (Google Custom Search)
+
+**Tipo:** OpenAPI Specification  
+**Operação:** `buscarPrecos`  
+**Descrição:** Busca preços de produtos em lojas online brasileiras
+
+**Parâmetros:**
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+|-----------|------|-------------|-----------|
+| `key` | string | ✅ Sim | API Key do Google Custom Search |
+| `cx` | string | ✅ Sim | Search Engine ID |
+| `q` | string | ✅ Sim | Termo de busca (nome do produto) |
+| `num` | integer | ❌ Não | Quantidade de resultados (padrão: 10) |
+| `gl` | string | ❌ Não | País da busca (padrão: "br") |
+| `hl` | string | ❌ Não | Idioma (padrão: "pt") |
+
+**Resposta da API:**
+{
+"items": [
+{
+"title": "Título do produto",
+"link": "URL da oferta",
+"snippet": "Descrição com preço",
+"displayLink": "nomeloja.com.br"
+}
+],
+"searchInformation": {
+"totalResults": "número de resultados"
+}
+}
+
+---
+
+## 🔄 Fluxo de Execução
+
+graph TD
+A[Usuário pergunta o preço] --> B[Agente recebe consulta]
+B --> C[Chama tool: buscarPrecos]
+C --> D[Google Custom Search API]
+D --> E[Busca em lojas brasileiras]
+E --> F[Retorna até 10 resultados]
+F --> G[Agente processa dados]
+G --> H[Extrai: preço, frete, loja]
+H --> I[Calcula preço total]
+I --> J[Monta tabela comparativa]
+J --> K[Identifica melhor oferta]
+K --> L[Apresenta resposta ao usuário]
+
+---
+
+## 🎯 Exemplos de Uso
+
+### Exemplo 1: Busca Bem-Sucedida
+
+**Entrada:**
+
+**Processamento:**
+1. Agente chama `buscarPrecos` com `q="echo show preço comprar"`
+2. API retorna 10 resultados de diferentes lojas
+3. Agente extrai informações de 5 lojas principais
+4. Calcula preços totais
+5. Monta tabela comparativa
+
+**Saída:**
+- Tabela com  lojas
+- Análise dos preços
+- Recomendação da melhor oferta
+
+---
+
+## 📊 Limitações Conhecidas
+
+1. **Dependência da API:** Limitado a 100 consultas/dia no plano gratuito do Google
+2. **Extração de Preços:** Depende da qualidade do snippet retornado
+3. **Frete:** Nem sempre disponível nos resultados da busca
+4. **Lojas Cobertas:** Limitado às lojas indexadas pelo Google
+5. **Preços em Tempo Real:** Podem estar desatualizados dependendo da indexação
+
+---
+
+## 🔄 Melhorias Futuras
+
+- [ ] Adicionar cache de resultados recentes
+- [ ] Integrar APIs diretas das lojas (quando disponíveis)
+- [ ] Implementar histórico de preços
+- [ ] Adicionar alertas de promoções
+- [ ] Expandir para outras categorias de produtos
+
+---
+
+## 📚 Referências Técnicas
+
+- [Azure AI Agents Documentation](https://learn.microsoft.com/azure/ai-services/agents/)
+- [OpenAPI 3.0 Specification](https://swagger.io/specification/)
+- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview)
+
+---
+
+**Última atualização:** Novembro 2025
+
+
