@@ -1,2 +1,69 @@
-# Ninja-Low-Price
-Este repositório faz parte do programa Frontier Girls e foi criado como um desafio (challenge) para desenvolvimento, aprendizado e evolução contínua. Aqui registro meu progresso, ideias, testes e soluções construídas ao longo do desafio, com foco em aprimorar habilidades, superar metas e colocar em prática novos conhecimentos.
+# 🛒 Ninja Low Price - Comparador Inteligente de Preços
+
+<div align="center">
+
+[![Azure AI Agent](https://img.shields.io/badge/Azure%20AI-Agent-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)](https://ai.azure.com/)
+[![Azure Functions](https://img.shields.io/badge/Azure-Functions-0062AD?style=for-the-badge&logo=azure-functions&logoColor=white)](https://azure.microsoft.com/services/functions/)
+[![GPT-4.1 nano](https://img.shields.io/badge/GPT--4o-Mini-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
+
+**Agente de IA desenvolvido para o Azure Frontier Girls AI Challenge**
+
+</div>
+
+---
+
+## 📋 Sobre o Projeto
+
+O **Ninja Low Price** é um agente inteligente de comparação de preços desenvolvido no **Azure AI Foundry** que realiza buscas automáticas em tempo real em múltiplas lojas online brasileiras. 
+
+A partir do nome de qualquer produto informado pelo usuário, o agente:
+- 🔍 Busca automaticamente em **5 lojas diferentes**
+- 💰 Compara **preço base + frete**
+- 📊 Apresenta tabela comparativa organizada
+- ✨ Recomenda automaticamente a **melhor oferta**
+
+### 🎯 Lojas Pesquisadas
+
+- Amazon Brasil
+- Mercado Livre
+- Magazine Luiza (Magalu)
+- Americanas
+- Casas Bahia
+- Submarino
+- Shopee
+- Outras lojas relevantes
+
+---
+
+## ✨ Funcionalidades
+
+✅ **Busca Automática** - O agente pesquisa em 5 lojas simultaneamente  
+✅ **Cálculo de Preço Total** - Considera preço base + frete  
+✅ **Tabela Comparativa** - Visualização clara e organizada  
+✅ **Recomendação Inteligente** - Identifica automaticamente a melhor oferta  
+✅ **Análise de Frete** - Detecta frete grátis e calcula custo final  
+✅ **Links Diretos** - Acesso rápido às ofertas encontradas
+
+---
+
+## 🎬 Demonstração
+
+### Exemplo de Consulta 1: Echo Show
+
+**Pergunta do Usuário:**
+> "preciso pesquisar uma caixa de som da alexa echo show"
+
+**Resposta do Agente:**
+
+| Loja | Modelo | Preço aproximado | Detalhes | Link |
+|------|--------|------------------|----------|------|
+| Amazon Brasil | Echo Show 5 (ou similar) | R$ 469,00 | Tela de 5 polegadas, modelo mais compacto | [Ver na Amazon](link) |
+| Mercado Livre | Echo Show 8 | R$ 899,00 | Tela de 8 polegadas | [Ver no Mercado Livre](link) |
+| Americanas | Echo Show 8 | R$ 849,00 | Tela de 8 polegadas | [Ver na Americanas](link) |
+| Submarino | Echo Show 8 | R$ 849,00 | Tela de 8 polegadas | [Ver no Submarino](link) |
+
+**Análise:** Amazon Brasil oferece o **melhor preço** com o modelo mais compacto (Echo Show 5) por **R$ 469,00**.
+
+---
+
+
